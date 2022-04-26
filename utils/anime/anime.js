@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 /*
  * anime.js v3.2.1
  * (c) 2020 Julian Garnier

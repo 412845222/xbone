@@ -1,5 +1,5 @@
-// @ts-nocheck
 /* eslint-disable */
+
 /*
  * xbone.js v1.0.0
  * (c) 2020 Dweb·九弓子(Zhang Xuqian)
@@ -9,11 +9,12 @@
 
 import Victor from "victor";
 import { Matrix3 } from "three";
-import anime from './utils/anime/anime';
+import anime from './utils/anime/anime.js';
 
 // if Xbone.clientScene == "web" && use All animejs
 // import anime from "animejs";
-export class Xbone {
+
+class Xbone {
   imgInfo_list = [];
   imgPoint_list = [];
   imgScale_list = [];
@@ -702,3 +703,4 @@ export class Xbone {
   }
 }
 
+export default Xbone;
