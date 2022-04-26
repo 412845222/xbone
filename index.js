@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 /*
  * xbone.js v1.0.0
  * (c) 2020 Dweb·九弓子(Zhang Xuqian)
