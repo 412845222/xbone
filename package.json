@@ -11,7 +11,7 @@
   "version": "1.0.1",
   "description": "XboneRuntime Skeleton animation",
   "scripts": {
-    "build": "rm -rf dist && node build.js"
+    "build": "node build.js"
   },
   "license": "MIT",
   "dependencies": {

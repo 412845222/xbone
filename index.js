@@ -14,7 +14,7 @@ import anime from './utils/anime/anime.js'
 // if Xbone.clientScene == "web" && use All animejs
 // import anime from "animejs";
 
-class Xbone {
+export class Xbone {
   imgInfo_list = []
   imgPoint_list = []
   imgScale_list = []
@@ -943,5 +943,5 @@ class Xbone {
   }
 }
 
-export default Xbone
+
 

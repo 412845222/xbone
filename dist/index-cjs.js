@@ -22,7 +22,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // index.js
 var xbone_exports = {};
 __export(xbone_exports, {
-  default: () => xbone_default
+  Xbone: () => Xbone
 });
 module.exports = __toCommonJS(xbone_exports);
 var import_victor = __toESM(require("victor"));
@@ -1693,7 +1693,10 @@ var Xbone = class {
     this.ctx.restore();
   }
   drawImageItem(img, imgPoint, imgScale, img_width = null, img_height = null) {
-    let imgpoint = { x: imgPoint.x - this.zeroOrg.x, y: imgPoint.y - this.zeroOrg.y };
+    let imgpoint = {
+      x: imgPoint.x - this.zeroOrg.x,
+      y: imgPoint.y - this.zeroOrg.y
+    };
     let imgWidth = img_width || img.width;
     let imgHeight = img_height || img.height;
     this.ctx.drawImage(img, imgpoint.x * this.relative_scale, imgpoint.y * this.relative_scale, imgWidth * this.relative_scale * this.scale * imgScale, imgHeight * this.relative_scale * this.scale * imgScale);
@@ -1712,7 +1715,10 @@ var Xbone = class {
     let bone_weight = info.bone_weight;
     let boneMoved_angle = info.boneMoved_angle;
     let imgPoint = this.imgPoint_list[index];
-    let reload_point = { x: imgPoint.x - this.zeroOrg.x, y: imgPoint.y - this.zeroOrg.y };
+    let reload_point = {
+      x: imgPoint.x - this.zeroOrg.x,
+      y: imgPoint.y - this.zeroOrg.y
+    };
     reload_point = new import_victor.default(reload_point.x * this.relative_scale, reload_point.y * this.relative_scale);
     let reload_img_width = this.imgInfo_list[index].width * this.imgScale_list[index] * this.relative_scale * this.scale;
     let reload_img_height = this.imgInfo_list[index].height * this.imgScale_list[index] * this.relative_scale * this.scale;
@@ -1849,7 +1855,11 @@ var Xbone = class {
     let retrun_point = root_bone_rotate_point;
     for (let i = 1; i <= b_idx; i++) {
       let bone2 = boneList[i];
-      bone2 = [new import_victor.default(bone2[0].x, bone2[0].y), new import_victor.default(bone2[1].x, bone2[1].y), new import_victor.default(bone2[2].x, bone2[2].y)];
+      bone2 = [
+        new import_victor.default(bone2[0].x, bone2[0].y),
+        new import_victor.default(bone2[1].x, bone2[1].y),
+        new import_victor.default(bone2[2].x, bone2[2].y)
+      ];
       let point2 = retrun_point;
       let init_angle = 0;
       let angle = angleList[i];
@@ -1913,15 +1923,27 @@ var Xbone = class {
     let boneMoved_angle = info.boneMoved_angle;
     let initialBoneList = info.initialBoneList;
     let initBone = JSON.parse(initialBoneList[boneIndex]);
-    initBone = [new import_victor.default(initBone[0].x, initBone[0].y), new import_victor.default(initBone[1].x, initBone[1].y), new import_victor.default(initBone[2].x, initBone[2].y)];
+    initBone = [
+      new import_victor.default(initBone[0].x, initBone[0].y),
+      new import_victor.default(initBone[1].x, initBone[1].y),
+      new import_victor.default(initBone[2].x, initBone[2].y)
+    ];
     let img_point = info.img_point;
     let initBone_angle = info.initBone_angle;
     let init_angle = initBone_angle[boneIndex];
     let rotateBone = boneList[boneIndex];
-    rotateBone = [new import_victor.default(rotateBone[0].x, rotateBone[0].y), new import_victor.default(rotateBone[1].x, rotateBone[1].y), new import_victor.default(rotateBone[2].x, rotateBone[2].y)];
+    rotateBone = [
+      new import_victor.default(rotateBone[0].x, rotateBone[0].y),
+      new import_victor.default(rotateBone[1].x, rotateBone[1].y),
+      new import_victor.default(rotateBone[2].x, rotateBone[2].y)
+    ];
     if (boneIndex > 0) {
       let pre_bone = boneList[boneIndex - 1];
-      pre_bone = [new import_victor.default(pre_bone[0].x, pre_bone[0].y), new import_victor.default(pre_bone[1].x, pre_bone[1].y), new import_victor.default(pre_bone[2].x, pre_bone[2].y)];
+      pre_bone = [
+        new import_victor.default(pre_bone[0].x, pre_bone[0].y),
+        new import_victor.default(pre_bone[1].x, pre_bone[1].y),
+        new import_victor.default(pre_bone[2].x, pre_bone[2].y)
+      ];
       let offset_move = pre_bone[0].clone().subtract(initBone[1]);
       let new_point2 = initBone[0].clone().add(offset_move);
       for (let i = 0; i < boneIndex; i++) {
@@ -1954,14 +1976,26 @@ var Xbone = class {
   subBoneLinkAge(info, boneIndex) {
     let img_point = info.img_point;
     let rotateBone = info.boneList[boneIndex];
-    rotateBone = [new import_victor.default(rotateBone[0].x, rotateBone[0].y), new import_victor.default(rotateBone[1].x, rotateBone[1].y), new import_victor.default(rotateBone[2].x, rotateBone[2].y)];
+    rotateBone = [
+      new import_victor.default(rotateBone[0].x, rotateBone[0].y),
+      new import_victor.default(rotateBone[1].x, rotateBone[1].y),
+      new import_victor.default(rotateBone[2].x, rotateBone[2].y)
+    ];
     let initBone_angle = info.initBone_angle;
     let boneList = info.boneList;
     boneList.forEach((bone, b_idx) => {
       if (b_idx > boneIndex) {
         let pre_bone = boneList[b_idx - 1];
-        pre_bone = [new import_victor.default(pre_bone[0].x, pre_bone[0].y), new import_victor.default(pre_bone[1].x, pre_bone[1].y), new import_victor.default(pre_bone[2].x, pre_bone[2].y)];
-        bone = [new import_victor.default(bone[0].x, bone[0].y), new import_victor.default(bone[1].x, bone[1].y), new import_victor.default(bone[2].x, bone[2].y)];
+        pre_bone = [
+          new import_victor.default(pre_bone[0].x, pre_bone[0].y),
+          new import_victor.default(pre_bone[1].x, pre_bone[1].y),
+          new import_victor.default(pre_bone[2].x, pre_bone[2].y)
+        ];
+        bone = [
+          new import_victor.default(bone[0].x, bone[0].y),
+          new import_victor.default(bone[1].x, bone[1].y),
+          new import_victor.default(bone[2].x, bone[2].y)
+        ];
         let angle = this.getRotateByMouseMove(pre_bone[1], bone[1], pre_bone[0]);
         let new_point_1 = this.replaceRotateBonePoint(angle, rotateBone, bone[1], img_point);
         bone[1] = new import_victor.default(new_point_1.x, new_point_1.y);
@@ -2010,7 +2044,11 @@ var Xbone = class {
     return newP_rotate_add;
   }
   getTwoPointAngle(bone) {
-    bone = [new import_victor.default(bone[0].x, bone[0].y), new import_victor.default(bone[1].x, bone[1].y), new import_victor.default(bone[2].x, bone[2].y)];
+    bone = [
+      new import_victor.default(bone[0].x, bone[0].y),
+      new import_victor.default(bone[1].x, bone[1].y),
+      new import_victor.default(bone[2].x, bone[2].y)
+    ];
     let dl = bone[0].distance(bone[1]);
     let temp_point = this.getPointByOffsetAndAngle(bone[1], dl, 0, 1);
     let angle = this.getRotateByMouseMove(bone[1], temp_point, bone[0]);
@@ -2020,4 +2058,3 @@ var Xbone = class {
     this.ctx.clearRect(0, 0, this.width + 10, this.height + 10);
   }
 };
-var xbone_default = Xbone;
