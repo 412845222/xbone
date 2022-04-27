@@ -3,6 +3,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const rollup = require('rollup')
+const { babel } = require('@rollup/plugin-babel')
 
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 
@@ -18,7 +19,13 @@ const generatorCode = async (format, fileName) => {
   const bundle = await rollup.rollup({
     input: PROJECT_ENTRY,
     external,
-    plugins: [nodeResolve()],
+    plugins: [
+      nodeResolve(),
+      babel({
+        babelHelpers: 'bundled',
+        exclude: 'node_modules/**',
+      }),
+    ],
   })
 
   await bundle.write({
