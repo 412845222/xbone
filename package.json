@@ -5,9 +5,14 @@
     "email": "412845222@qq.com",
     "url": "https://www.dweb.club"
   },
-  "main": "index.js",
+  "main": "dist/index-cjs.js",
+  "module": "dist/index-esm.js",
+  "types": "typings/index.d.ts",
   "version": "1.0.1",
   "description": "XboneRuntime Skeleton animation",
+  "scripts": {
+    "build": "rm -rf dist && node build.js"
+  },
   "license": "MIT",
   "dependencies": {
     "animejs": "^3.2.1",
@@ -15,8 +20,10 @@
     "victor": "^1.1.0"
   },
   "files": [
-    "index.js",
-    "utils"
+    "typings",
+    "README.md",
+    "LICENSE.md",
+    "dist"
   ],
   "homepage": "https://xstory.dweb.club/",
   "keywords": [
@@ -31,5 +38,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/412845222/xbone.git"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.38",
+    "esbuild-node-externals": "^1.4.1"
   }
 }
