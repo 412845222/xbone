@@ -1,1 +1,1 @@
-export * from './xbone'
+export * from "./xbone";

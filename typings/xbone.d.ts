@@ -1,15 +1,15 @@
 import Victor from 'victor'
 
-export type XboneClientScene = 'web' | 'ohos'
+export type XboneClientScene = 'web' | 'ohos' | string
 
 export type XboneCoordinate = 'x' | 'y'
 
 export type XboneSize = 'width' | 'height'
 
 export interface XboneOPtions {
-  ctx: HTMLCanvasElement
+  ctx: CanvasRenderingContext2D | null
   clientScene: XboneClientScene
-  animeCall(anime_gridlist: any[]): void
+  animeCall: (anime_gridList?: never[]) => void
   data: {
     clientScene: XboneClientScene
     zeroOrg: Record<XboneCoordinate, number>
@@ -39,7 +39,9 @@ declare class Xbone {
   animeClear(): void
   checkBoneAnime(): any[]
   getAnimeGridList(): any[]
-  reloadImgDraw(): void
+  reloadImgDraw(
+    anime_gridlist?: any[]
+  ): void
   drawImageItem(
     img: ImageData,
     imageScale: number,
