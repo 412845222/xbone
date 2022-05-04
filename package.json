@@ -8,7 +8,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "typings/index.d.ts",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "XboneRuntime Skeleton animation",
   "scripts": {
     "build": "node build.js"
@@ -24,7 +24,6 @@
     "README.md",
     "LICENSE.md",
     "dist",
-    "index.js",
     "utils"
   ],
   "homepage": "https://xstory.dweb.club/",

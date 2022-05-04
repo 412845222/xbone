@@ -7,13 +7,13 @@
  * https://xstory.dweb.club
  */
 
-// import Victor from './utils/victor/victor.js'
-// import { Matrix3 } from './utils/math/three.js'
-// import anime from './utils/anime/anime.js'
-
-import Victor from 'victor'
-import { Matrix3 } from 'three'
+import Victor from './utils/victor/victor.js'
+import { Matrix3 } from './utils/math/three.js'
 import anime from './utils/anime/anime.js'
+
+// import Victor from 'victor'
+// import { Matrix3 } from 'three'
+// import anime from './utils/anime/anime.js'
 
 // if Xbone.clientScene == "web" && use All animejs
 // import anime from "animejs";
