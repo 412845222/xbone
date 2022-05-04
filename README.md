@@ -17,7 +17,7 @@
 
     // OHOS
     import xbone_data from "../../common/json/export_data.json"
-    import { Xbone } from "xbone/index.js";
+    import { Xbone } from "xbone/xbone_ohos.js"
     
     // Web
     import xbone_data from "../assets/data/export_data.json";
